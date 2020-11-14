@@ -1,0 +1,4 @@
+{"latitude": "54.080556", "user
+
+{"latitude": "54.080556", "user_id": 23, "name": "Test Customer", "longitude": "-6.361944"}
+
