@@ -1,4 +1,4 @@
-Program that displays customers from a file which are location within a 100KM radius around the Intercom offices in Dublin.
+Program that displays customers from a file which are located within a 100KM radius around the Intercom offices in Dublin.
 
 An environment with Python 3 is required.
 

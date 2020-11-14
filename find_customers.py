@@ -5,7 +5,7 @@ from src.data_types.customer import Customer
 from src.filter import CustomerDistanceFromOfficeFilter
 from src.defs import DataFormat
 
-MAX_DISTANCE_KM = 100
+MAX_DISTANCE_KM = 100.0
 
 if __name__ == "__main__":
     data_source = FileDataSource(

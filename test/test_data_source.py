@@ -8,7 +8,7 @@ from src.defs import DataFormat
 
 class TestDataSource(TestCase):
     def setUp(self):
-        source_file = os.path.dirname(__file__) + "/data/json_1line.txt"
+        source_file = os.path.join(os.path.dirname(__file__), "data", "json_1line.txt")
         self.ds = FileDataSource(source_file, DataFormat.json)
 
     def test_get_one_line(self):
@@ -27,7 +27,7 @@ class TestDataSource(TestCase):
 
 class TestCustomerDataSource(TestCase):
     def setUp(self):
-        source_file = os.path.dirname(__file__) + "/data/test_customers.txt"
+        source_file = os.path.join(os.path.dirname(__file__), "data", "test_customers.txt")
         self.ds = FileDataSource(source_file, DataFormat.json, Customer)
 
     def test_get_customers(self):
