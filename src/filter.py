@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import List
 
 from .location import Location
 from .distance_calculator import calculate_distance
@@ -11,7 +12,7 @@ class Filter(ABC):
     def filter_function(self, data: DataType):
         return data
 
-    def filter_data(self, data):
+    def filter_data(self, data: List[DataType]):
         output_data = []
         for item in data:
             if self.filter_function(item):
@@ -21,10 +22,12 @@ class Filter(ABC):
 class CustomerDistanceFromOfficeFilter(Filter):
     _office_location = Location("53.339428", "-6.257664")
 
-    def __init__(self, max_distance):
+    def __init__(self, max_distance: float):
         self._max_distance = max_distance
 
-    def filter_function(self, customer: Customer):
-        return calculate_distance(
-            self._office_location, customer.location) <= self._max_distance
+    def filter_function(self, customer: Customer) -> bool:
+        if type(customer) == Customer:
+            return calculate_distance(
+                self._office_location, customer.location) <= self._max_distance
+        return False
         
